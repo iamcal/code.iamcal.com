@@ -104,12 +104,12 @@ function ok($pass, $test_name = '')
         $_num_failures++;
         $caller = debug_backtrace();
 
-        if (strstr($caller['0']['file'], $_SERVER['PHP_SELF'])) {
-            $file = $caller['0']['file'];
-            $line = $caller['0']['line'];
+        if (strstr($caller['0']['file'] ?? '', $_SERVER['PHP_SELF'] ?? '')) {
+            $file = $caller['0']['file'] ?? '';
+            $line = $caller['0']['line'] ?? '';
         } else {
-            $file = $caller['1']['file'];
-            $line = $caller['1']['line'];
+            $file = $caller['1']['file'] ?? '';
+            $line = $caller['1']['line'] ?? '';
         }
 
         if (isset($_SERVER['SERVER_ROOT'])){

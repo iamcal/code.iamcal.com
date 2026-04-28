@@ -1,5 +1,5 @@
 <?
-	$data = preg_replace("/[^01]/","",$data);
+	$data = preg_replace("/[^01]/","",$_REQUEST['data'] ?? '');
 
 	function dodata($data){
 		$out = '';

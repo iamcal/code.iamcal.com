@@ -145,19 +145,19 @@ h1 {
 
 <div class="isemail isemail_tooltip">
 	<span>
-		Test # <?=$test['id']?><br />
-		<strong><?=show_escapes(HtmlSpecialChars($test['address']))?></strong><br />
-		Expected result: <?=is_valid($test['expected'])?><br />
-<? if ($test['comment']){ ?>
+		Test # <?=$test['id'] ?? ''?><br />
+		<strong><?=show_escapes(HtmlSpecialChars($test['address'] ?? ''))?></strong><br />
+		Expected result: <?=is_valid($test['expected'] ?? null)?><br />
+<? if ($test['comment'] ?? ''){ ?>
 		Comment: <?=HtmlSpecialChars($test['comment'])?><br />
 <? } ?>
-		Source: <?=HtmlSpecialChars($test['source'])?>
+		Source: <?=HtmlSpecialChars($test['source'] ?? '')?>
 	</span>
-	<p class="isemail_address"><nobr><a href="<?=HtmlSpecialChars($test['sourcelink'])?>" target="_blank"><?=show_escapes(HtmlSpecialChars($test['address']))?></a></nobr></p>
-	<p class="isemail_result isemail_expected"><?=is_valid($test['expected'])?></p>
+	<p class="isemail_address"><nobr><a href="<?=HtmlSpecialChars($test['sourcelink'] ?? '')?>" target="_blank"><?=show_escapes(HtmlSpecialChars($test['address'] ?? ''))?></a></nobr></p>
+	<p class="isemail_result isemail_expected"><?=is_valid($test['expected'] ?? null)?></p>
 
-	<p class="isemail_result isemail_<?=$test['result_strict']==$test['expected']?'':'un'?>expected"><?=is_valid($test['result_strict'])?></p>
-	<p class="isemail_result isemail_<?=$test['result_public']==$test['expected']?'':'un'?>expected"><?=is_valid($test['result_public'])?></p>
+	<p class="isemail_result isemail_<?=($test['result_strict'] ?? null)==($test['expected'] ?? null)?'':'un'?>expected"><?=is_valid($test['result_strict'] ?? null)?></p>
+	<p class="isemail_result isemail_<?=($test['result_public'] ?? null)==($test['expected'] ?? null)?'':'un'?>expected"><?=is_valid($test['result_public'] ?? null)?></p>
 </div>
 
 <? } ?>

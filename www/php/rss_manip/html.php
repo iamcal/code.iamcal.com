@@ -11,7 +11,7 @@
 <?
 	foreach ($rss->getItems() as $item) {
 		echo "<h3>$item[title]</h3>\n";
-		echo chop($item[description])."<br>&nbsp;<a href=\"$item[link]\">More...</a><br>\n";
+		echo chop($item['description'] ?? '')."<br>&nbsp;<a href=\"$item[link]\">More...</a><br>\n";
 		echo "<br>\n";
 	}
 ?>

@@ -11,7 +11,7 @@ body {
 }
 
 #main {
-	width: <?=$width?$width:800?>px;
+	width: <?=$width ?? 800?>px;
 	margin: 0 auto;
 	text-align: left;
 	padding: 1em 1em 5em 1em;
@@ -50,6 +50,6 @@ p.homelink a:hover {
 
 <div id="main">
 
-<? if (!$no_homelink){ ?>
+<? if (!($no_homelink ?? null)){ ?>
 <p class="homelink"><a href="/">&laquo; Code Homepage</a></p>
 <? } ?>

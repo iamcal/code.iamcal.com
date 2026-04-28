@@ -30,12 +30,12 @@
 <?
 	$cardnumber = 1;
 	$accesskey = 0;
-	foreach ($rss->getItems($item[description]) as $item) {
+	foreach ($rss->getItems($item['description'] ?? '') as $item) {
 		$cardnumber++;
 ?>
 	<card id="Card<?=$cardnumber?>" title="<?=$cardnumber?>">
 		<p align="left">
-			<?=$item[description]?><br/>
+			<?=$item['description'] ?? ''?><br/>
 			<anchor title="Ok">OK<go href="#Main" method="get" sendreferer="false"/></anchor>
 		</p>
 	</card>

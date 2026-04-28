@@ -13,17 +13,17 @@
 <p>Enter an email address to test:</p>
 
 <form action="demo.php" method="get">
-<input type="text" name="e" value="<?=HtmlSpecialChars($_GET['e'])?>" style="width: 400px" />
+<input type="text" name="e" value="<?=HtmlSpecialChars($_GET['e'] ?? '')?>" style="width: 400px" />
 <input type="submit" value="Go" />
 </form>
 
-<? if (strlen($_GET['e'])){ ?>
+<? if (strlen($_GET['e'] ?? '')){ ?>
 
 <hr />
 
-<p><b>Address:</b> <?=HtmlSpecialChars($_GET['e'])?></p>
+<p><b>Address:</b> <?=HtmlSpecialChars($_GET['e'] ?? '')?></p>
 <p><b>Result:</b>
-<? if (is_valid_email_address($_GET['e'])){ ?>
+<? if (is_valid_email_address($_GET['e'] ?? '')){ ?>
 	<span style="color: green">Valid</span>
 <? }else{ ?>
 	<span style="color: red">Invalid</span>

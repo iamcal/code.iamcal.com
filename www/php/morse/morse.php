@@ -46,14 +46,14 @@
 		'/' => '-..-.',
 		'(' => '-.--.',
 		')' => '-.--.-',
-		'Ä' => '.-.-',
-		'Á' => '.--.-',
-		'Å' => '.--.-',
+		'ï¿½' => '.-.-',
+		'ï¿½' => '.--.-',
+		'ï¿½' => '.--.-',
 		'Ch' => '----',
-		'É' => '..-..',
-		'Ñ' => '--.--',
-		'Ö' => '---.',
-		'Ü' => '..--',
+		'ï¿½' => '..-..',
+		'ï¿½' => '--.--',
+		'ï¿½' => '---.',
+		'ï¿½' => '..--',
 	);
 
 	$rev_morse = array_flip($fwd_morse);
@@ -71,7 +71,7 @@
 			$bits = array();
 
 			for($i=0; $i<strlen($word); $i++){
-				$temp = $fwd_morse[substr($word,$i,1)];
+				$temp = $fwd_morse[substr($word,$i,1)] ?? null;
 				if ($temp) $bits[] = $temp;
 			}
 			$words_out[] = implode(' ', $bits);
@@ -90,14 +90,15 @@
 			if ($bit == '/'){
 				$out .= " ";
 			}else{
-				$out .= $rev_morse[$bit];
+				$out .= $rev_morse[$bit] ?? '';
 			}
 		}
 		return $out;
 	}
 
-	$morse = StripSlashes($morse);
-	$text = StripSlashes($text);
+	$morse = StripSlashes($_REQUEST['morse'] ?? '');
+	$text = StripSlashes($_REQUEST['text'] ?? '');
+	$action = $_REQUEST['action'] ?? '';
 
 	if ($action == 't2m') $morse = text_to_morse($text);
 	if ($action == 'm2t') $text = morse_to_text($morse);

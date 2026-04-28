@@ -18,20 +18,20 @@
 		echo "<table border=1>\n";
 		echo "<tr><th>ID</th><th>Address</th><th>Expected</th></tr>\n";
 		foreach ($show as $id){
-			$test = $GLOBALS['tests'][$id];
+			$test = $GLOBALS['tests'][$id] ?? array();
 
-			$address = $test['address'];
+			$address = $test['address'] ?? '';
 			$address = wordwrap($address, 50, "{FORCEBREAK}", true);
 			$address = HtmlSpecialChars($address);
 			$address = str_replace(array("\r","\n"," ","\0"), array("&amp;#13;","&amp;#10;","&nbsp;","&amp;#0;"), $address);
 			$address = str_replace('{FORCEBREAK}', "\n ", $address);
 
 			echo "<tr>";
-			echo "<td>$test[id]</td>";
+			echo "<td>".($test['id'] ?? '')."</td>";
 			echo "<td><small>".HtmlSpecialChars($address)."</small></td>";
 
-			if ($test['valid']){
-				if ($test['warning']){
+			if ($test['valid'] ?? false){
+				if ($test['warning'] ?? false){
 					echo "<td>Pass w/ Warning</td>";
 				}else{
 					echo "<td>Pass</td>";
@@ -67,17 +67,17 @@ function hide(uid){
 <?
 	foreach ($glossary as $k => $row){
 
-		echo "<h2 style=\"background-color: #eee\">$row[title]</h2>\n";
+		echo "<h2 style=\"background-color: #eee\">".($row['title'] ?? '')."</h2>\n";
 
 		$ids = array();
 		foreach ($tests as $test){
 			if (isset($test['tags']) && in_array($k, $test['tags'])){
-				$ids[] = $test['id'];
+				$ids[] = $test['id'] ?? null;
 			}
 		}
 		test_table($ids);
 
-		echo Markdown($row['desc']);
+		echo Markdown($row['desc'] ?? '');
 	}
 ?>
 

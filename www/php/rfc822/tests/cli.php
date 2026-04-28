@@ -9,7 +9,7 @@
 		if ($test['id'] > 50) continue;
 
 		$ran++;
-		if ($test['expected'] == $test['result_3696']){
+		if (($test['expected'] ?? null) == ($test['result_3696'] ?? null)){
 			$passed++;
 		}else{
 			print_r($test);
