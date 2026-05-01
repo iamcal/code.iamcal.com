@@ -23,17 +23,23 @@
 		$blocks = array();
 
 		while(preg_match('!</pre>!i', $text)){
-			$text = preg_replace('!^(.*?)</pre>!ie', 'process_block(StripSlashes("\\1"), $blocks)', $text);
+			$text = preg_replace_callback('!^(.*?)</pre>!i', function ($m) use (&$blocks){
+				return process_block($m[1], $blocks);
+			}, $text);
 		}
 
-		$text = preg_replace('!{CODE-BLOCK-(\d+)}!e', '"<pre>".HtmlSpecialChars(unwind_block(\\1, $blocks))."</pre>"', $text);
+		$text = preg_replace_callback('!{CODE-BLOCK-(\d+)}!', function ($m) use (&$blocks){
+			return "<pre>".HtmlSpecialChars(unwind_block($m[1], $blocks))."</pre>";
+		}, $text);
 
 		return $text;
 	}
 
 	function process_block($text, &$blocks){
 
-		return preg_replace('!(.*)<pre>(.*?)$!ie', 'StripSlashes("\\1").process_block_2(StripSlashes("\\2"), $blocks)', $text);
+		return preg_replace_callback('!(.*)<pre>(.*?)$!i', function ($m) use (&$blocks){
+			return $m[1].process_block_2($m[2], $blocks);
+		}, $text);
 	}
 
 	function process_block_2($text, &$blocks){
@@ -52,7 +58,9 @@
 
 		while (preg_match('!{CODE-BLOCK-(\d+)}!', $text)){
 
-			$text = preg_replace('!{CODE-BLOCK-(\d+)}!e', '"<pre>".unwind_block_2($blocks["block_\\1"], $blocks)."</pre>"', $text);
+			$text = preg_replace_callback('!{CODE-BLOCK-(\d+)}!', function ($m) use (&$blocks){
+				return "<pre>".unwind_block_2($blocks["block_".$m[1]], $blocks)."</pre>";
+			}, $text);
 		}
 
 		return $text;
