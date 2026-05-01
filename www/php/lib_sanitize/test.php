@@ -169,7 +169,7 @@
 	test_string("\xE1\xE1\xE1\x80\x80\x80", "\xE1\x80\x80",		"3L2 3T at egdes");
 
 	test_string("\xE1\x80\xE1\xE1\x80\x80\x80", "\xE1\x80\x80",	"L2 T 2L2 3T at egdes");
-	
+
 
 	}
 
