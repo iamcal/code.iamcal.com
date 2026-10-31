@@ -1,7 +1,7 @@
 <?php
 	$title = 'Git Cheatsheet';
 	#$width = 900;
-	include('../../head.txt');
+	include('../../head.php');
 ?>
 
 <h1>Git Cheatsheet</h1>
@@ -27,4 +27,4 @@ git submodule init
 git submodule update
 </pre>
 
-<?php include('../../foot.txt'); ?>
+<?php include('../../foot.php'); ?>

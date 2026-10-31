@@ -66,7 +66,7 @@ h1 {
 
 <?php
 	$nav = 'code';
-	include('/var/www/html/code.iamcal.com/shared/universal_nav.txt');
+	include('/var/www/html/code.iamcal.com/shared/universal_nav.php');
 ?>
 
 <div id="main">

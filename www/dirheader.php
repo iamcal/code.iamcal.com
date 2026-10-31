@@ -1,6 +1,6 @@
 <?php
 	$nav = 'code';
-	include('/var/www/html/code.iamcal.com/shared/universal_nav.txt');
+	include('/var/www/html/code.iamcal.com/shared/universal_nav.php');
 ?>
 <style>
 

@@ -1,7 +1,7 @@
 <?php
 	$title = "RFC 822 Demo";
 	$no_homelink = 1;
-	include('../../head.txt');
+	include('../../head.php');
 
 	include('rfc822.php');
 ?>
@@ -34,5 +34,5 @@
 
 
 <?php
-	include('../../foot.txt');
+	include('../../foot.php');
 ?>

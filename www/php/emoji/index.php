@@ -1,7 +1,7 @@
 <?php
 	$title = 'Emoji for PHP';
 	$width = 800;
-	include('../../head.txt');
+	include('../../head.php');
 ?>
 
 <h1>Emoji for PHP</h1>
@@ -38,5 +38,5 @@
 </pre>
 
 <?php
-	include('../../foot.txt');
+	include('../../foot.php');
 ?>

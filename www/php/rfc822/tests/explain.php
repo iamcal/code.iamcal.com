@@ -1,6 +1,6 @@
 <?php
         $title = "Email Address Parsing Tests";
-        include('../../../head.txt');
+        include('../../../head.php');
 
 	include('reader.php');
 	include('../utils/markdown.php');
@@ -82,6 +82,6 @@ function hide(uid){
 ?>
 
 <?php
-        include('../../../foot.txt');
+        include('../../../foot.php');
 ?>
 

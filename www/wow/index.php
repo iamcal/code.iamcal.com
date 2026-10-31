@@ -1,7 +1,7 @@
 <?php
 	$title = 'World of Warcraft';
 	#$width = 900;
-	include('../head.txt');
+	include('../head.php');
 ?>
 <style>
 dd { margin-bottom: 1em; }
@@ -185,4 +185,4 @@ I created the software that powers the weekly <a href="http://www.saate.net/cate
 
 
 
-<?php include('../foot.txt'); ?>
+<?php include('../foot.php'); ?>

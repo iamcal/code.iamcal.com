@@ -1,6 +1,6 @@
 <?php
 	$title = 'File Manager - Readme';
-	include('../../head.txt');
+	include('../../head.php');
 ?>
 	<h1>File Manager</h1>
 
@@ -50,4 +50,4 @@
 	<br>
 	<div class="footer">&copy;2002-2004 Cal Henderson</div>
 
-<?php include('../../foot.txt'); ?>
+<?php include('../../foot.php'); ?>

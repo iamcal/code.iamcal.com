@@ -29,7 +29,7 @@ h1 {
 </head>
 <body>
 
-<?php include('/var/www/html/code.iamcal.com/shared/universal_nav.txt'); ?>
+<?php include('/var/www/html/code.iamcal.com/shared/universal_nav.php'); ?>
 
 <div id="main">
 

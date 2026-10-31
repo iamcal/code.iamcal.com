@@ -1,7 +1,7 @@
 <?php
 	$title = 'lib_filter';
 	$width = 800;
-	include('../../head.txt');
+	include('../../head.php');
 ?>
 
 <h1>lib_filter - An HTML filtering library in PHP</h1>
@@ -29,5 +29,5 @@
 
 
 <?php
-	include('../../foot.txt');
+	include('../../foot.php');
 ?>
