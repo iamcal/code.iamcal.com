@@ -1,0 +1,4 @@
+# Included by the pages here, not pages themselves
+<Files "testmore.php">
+	Require all denied
+</Files>

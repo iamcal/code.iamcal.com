@@ -1,0 +1,4 @@
+# Included by the pages here, not pages themselves
+<Files "lib_filter.php">
+	Require all denied
+</Files>

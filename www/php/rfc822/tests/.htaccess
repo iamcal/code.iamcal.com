@@ -1,0 +1,4 @@
+# Included by the pages here, not pages themselves
+<FilesMatch "^(reader|runner)\.php$">
+	Require all denied
+</FilesMatch>

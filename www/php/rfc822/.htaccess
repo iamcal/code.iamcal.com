@@ -1,0 +1,4 @@
+# Included by the pages here, not pages themselves
+<Files "rfc822.php">
+	Require all denied
+</Files>
