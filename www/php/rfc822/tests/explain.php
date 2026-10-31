@@ -3,7 +3,7 @@
         include('../../../head.php');
 
 	include('reader.php');
-	include('../utils/markdown.php');
+	include(__DIR__.'/../../../../vendor/autoload.php');
 
 	$GLOBALS['pageuids']=1;
 
@@ -77,7 +77,7 @@ function hide(uid){
 		}
 		test_table($ids);
 
-		echo Markdown($row['desc'] ?? '');
+		echo \Michelf\Markdown::defaultTransform($row['desc'] ?? '');
 	}
 ?>
 
