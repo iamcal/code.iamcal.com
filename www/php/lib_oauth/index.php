@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = 'lib_oauth - Simple OAuth for PHP4';
 	include('../../head.txt');
 ?>
@@ -11,4 +11,4 @@
 
 <p>You can grab a copy from the master branch on <a href="http://github.com/iamcal/lib_oauth">github</a>.</p>
 
-<? include('../../foot.txt'); ?>
+<?php include('../../foot.txt'); ?>

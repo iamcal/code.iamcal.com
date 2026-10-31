@@ -43,13 +43,13 @@ p.homelink a:hover {
 </head>
 <body>
 
-<?
+<?php
 	$nav = 'code';
 	include('/var/www/html/code.iamcal.com/shared/universal_nav.txt');
 ?>
 
 <div id="main">
 
-<? if (!($no_homelink ?? null)){ ?>
+<?php if (!($no_homelink ?? null)){ ?>
 <p class="homelink"><a href="/">&laquo; Code Homepage</a></p>
-<? } ?>
+<?php } ?>

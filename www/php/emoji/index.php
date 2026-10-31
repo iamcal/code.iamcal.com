@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = 'Emoji for PHP';
 	$width = 800;
 	include('../../head.txt');
@@ -37,6 +37,6 @@
 	$html = emoji_unified_to_html($clean_text);
 </pre>
 
-<?
+<?php
 	include('../../foot.txt');
 ?>

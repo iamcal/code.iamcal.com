@@ -1,4 +1,4 @@
-<?
+<?php
 	#
 	# some code to stop double posting
 	# by cal

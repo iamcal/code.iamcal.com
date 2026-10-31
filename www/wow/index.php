@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = 'World of Warcraft';
 	#$width = 900;
 	include('../head.txt');
@@ -185,4 +185,4 @@ I created the software that powers the weekly <a href="http://www.saate.net/cate
 
 
 
-<? include('../foot.txt'); ?>
+<?php include('../foot.txt'); ?>

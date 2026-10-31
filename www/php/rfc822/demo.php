@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = "RFC 822 Demo";
 	$no_homelink = 1;
 	include('../../head.txt');
@@ -17,22 +17,22 @@
 <input type="submit" value="Go" />
 </form>
 
-<? if (strlen($_GET['e'] ?? '')){ ?>
+<?php if (strlen($_GET['e'] ?? '')){ ?>
 
 <hr />
 
 <p><b>Address:</b> <?=HtmlSpecialChars($_GET['e'] ?? '')?></p>
 <p><b>Result:</b>
-<? if (is_valid_email_address($_GET['e'] ?? '')){ ?>
+<?php if (is_valid_email_address($_GET['e'] ?? '')){ ?>
 	<span style="color: green">Valid</span>
-<? }else{ ?>
+<?php }else{ ?>
 	<span style="color: red">Invalid</span>
-<? }?>
+<?php }?>
 </p>
 
-<? } ?>
+<?php } ?>
 
 
-<?
+<?php
 	include('../../foot.txt');
 ?>

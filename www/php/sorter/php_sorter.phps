@@ -1,4 +1,4 @@
-<?
+<?php
 	#get rows
 	$rows6 = array();
 	while($row6 = mysql_fetch_array($result6)){
@@ -18,6 +18,6 @@
 ?>
 	<a href="details.php?p=<?=$row6[ID]?>"><?=StripSlashes($row6['post_title'])?></a>
 	<br>
-<?
+<?php
 	}
 ?>

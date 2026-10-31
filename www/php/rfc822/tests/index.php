@@ -101,7 +101,7 @@ h1 {
 
 <h1>RFC-compliant email address validation</h1>
 
-<?
+<?php
 	include('runner.php');
 
 #echo "<pre>";
@@ -141,16 +141,16 @@ h1 {
 </div>
 
 
-<? foreach ($tests as $test){ ?>
+<?php foreach ($tests as $test){ ?>
 
 <div class="isemail isemail_tooltip">
 	<span>
 		Test # <?=$test['id'] ?? ''?><br />
 		<strong><?=show_escapes(HtmlSpecialChars($test['address'] ?? ''))?></strong><br />
 		Expected result: <?=is_valid($test['expected'] ?? null)?><br />
-<? if ($test['comment'] ?? ''){ ?>
+<?php if ($test['comment'] ?? ''){ ?>
 		Comment: <?=HtmlSpecialChars($test['comment'])?><br />
-<? } ?>
+<?php } ?>
 		Source: <?=HtmlSpecialChars($test['source'] ?? '')?>
 	</span>
 	<p class="isemail_address"><nobr><a href="<?=HtmlSpecialChars($test['sourcelink'] ?? '')?>" target="_blank"><?=show_escapes(HtmlSpecialChars($test['address'] ?? ''))?></a></nobr></p>
@@ -160,7 +160,7 @@ h1 {
 	<p class="isemail_result isemail_<?=($test['result_public'] ?? null)==($test['expected'] ?? null)?'':'un'?>expected"><?=is_valid($test['result_public'] ?? null)?></p>
 </div>
 
-<? } ?>
+<?php } ?>
 
 <p style="clear: both; padding-bottom: 50px;">&nbsp;</p>
 

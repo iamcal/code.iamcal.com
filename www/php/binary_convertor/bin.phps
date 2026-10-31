@@ -1,4 +1,4 @@
-<?
+<?php
 	$data = preg_replace("/[^01]/","",$data);
 
 	function dodata($data){
@@ -13,10 +13,10 @@
 
 ?>
 
-<? if ($data){ ?>
+<?php if ($data){ ?>
 	Message: "<?=dodata($data)?>"<br>
 	<br>
-<? } ?>
+<?php } ?>
 <form method="post">
 <textarea name="data" wrap="virtual" col="30" rows="10"></textarea><br>
 <input type="submit" value="go">

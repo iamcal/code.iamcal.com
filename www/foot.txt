@@ -1,6 +1,6 @@
 </div>
 
-<? include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
+<?php include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
 
 </body>
 </html>

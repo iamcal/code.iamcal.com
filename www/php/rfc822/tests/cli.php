@@ -1,4 +1,4 @@
-<?
+<?php
 	include('runner.php');
 
 	$ran = 0;

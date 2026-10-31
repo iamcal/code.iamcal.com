@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = 'lib_autolink - PHP HTML link formatting';
 	include('../../head.txt');
 ?>
@@ -10,4 +10,4 @@
 <p>You can grab a copy from the master branch on <a href="https://github.com/iamcal/lib_autolink">github</a>,
 	or just download a <a href="https://github.com/iamcal/lib_autolink/zipball/master">zip file</a>.</p>
 
-<? include('../../foot.txt'); ?>
+<?php include('../../foot.txt'); ?>

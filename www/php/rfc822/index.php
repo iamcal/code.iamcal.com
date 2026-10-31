@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = "RFC 822 Email Address Parser in PHP";
 	include('../../head.txt');
 ?>
@@ -113,6 +113,6 @@ ones:</p>
 </p>
 
 
-<?
+<?php
 	include('../../foot.txt');
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = 'lib_filter';
 	$width = 800;
 	include('../../head.txt');
@@ -28,6 +28,6 @@
 </ul>
 
 
-<?
+<?php
 	include('../../foot.txt');
 ?>

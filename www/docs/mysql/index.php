@@ -1,4 +1,4 @@
-<?
+<?php
 	$title = 'MySQL Datatypes';
 	$width = 900;
 	include('../../head.txt');
@@ -191,4 +191,4 @@
 	</tr>
 </table>
 
-<? include('../../foot.txt'); ?>
+<?php include('../../foot.txt'); ?>

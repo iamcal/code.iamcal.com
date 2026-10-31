@@ -1,5 +1,5 @@
 <table border="1">
-<?
+<?php
 	test('1 <pre> foo </pre> 2');
 	test('1 <pre> <b>foo</b> </pre> 2');
 	test('1 <pre> <pre> foo </pre> </pre> 2');

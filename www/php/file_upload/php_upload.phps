@@ -1,4 +1,4 @@
-<?
+<?php
 	# this is our sexy routine
 
 	function upload_a_file($field, $path){

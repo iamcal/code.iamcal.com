@@ -1,4 +1,4 @@
-<?
+<?php
 	function folder_updated($folder){
 
 		$path = "/var/www/html/code.iamcal.com/www".$folder;
@@ -64,7 +64,7 @@ h1 {
 </head>
 <body>
 
-<?
+<?php
 	$nav = 'code';
 	include('/var/www/html/code.iamcal.com/shared/universal_nav.txt');
 ?>
@@ -232,7 +232,7 @@ I created some <a href="http://www.iamcal.com/misc/fonts/">pixel fonts</a> which
 
 </div>
 
-<? include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
+<?php include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
 
 </body>
 </html>

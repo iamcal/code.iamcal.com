@@ -1,4 +1,4 @@
-<?
+<?php
 	if ($email){
 		mail('gpnewslist-request@gotplayed.com', 'subscribe', '', "From: $email");
 

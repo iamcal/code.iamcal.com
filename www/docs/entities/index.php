@@ -23,7 +23,7 @@ td {
 </head>
 <body>
 
-<? include('/var/www/html/code.iamcal.com/shared/universal_nav.txt'); ?>
+<?php include('/var/www/html/code.iamcal.com/shared/universal_nav.txt'); ?>
 
 <div id="page">
 
@@ -40,7 +40,7 @@ td {
 		<td><b>Description</b></td>
 		<td><b>Codepoint</b></td>
 	</tr>
-<?
+<?php
 
 	$lines = file('data.txt');
 
@@ -60,13 +60,13 @@ td {
 		<td><?=$matches[3]?></td>
 		<td>U+<?=$matches[4]?></td>
 	</tr>
-<?
+<?php
 			}else{
 ?>
 	<tr valign="top" bgcolor="#eeeeee">
 		<td colspan="5">entity match failed: <?=htmlentities($line)?></td>
 	</tr>
-<?
+<?php
 			}
 		}else{
 			# comment
@@ -79,13 +79,13 @@ td {
 	<tr valign="top" bgcolor="#cccccc">
 		<td colspan="5"><b><?=$comment?></b></td>
 	</tr>
-<?
+<?php
 				}else{
 ?>
 	<tr valign="top" bgcolor="#eeeeee">
 		<td colspan="5"><i><?=$comment?></i></td>
 	</tr>
-<?
+<?php
 				}
 			}
 		}
@@ -96,7 +96,7 @@ td {
 
 </div>
 
-<? include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
+<?php include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
 
 </body>
 </html>

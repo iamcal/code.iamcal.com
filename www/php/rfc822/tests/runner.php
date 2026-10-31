@@ -1,4 +1,4 @@
-<?
+<?php
 	include('reader.php');
 	include('../rfc822.php');
 

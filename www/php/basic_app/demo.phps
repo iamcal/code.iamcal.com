@@ -1,4 +1,4 @@
-<?
+<?php
 	include('init.php');
 
 	if ($done){

@@ -35,7 +35,7 @@ pre {
 </head>
 <body>
 
-<? include('/var/www/html/code.iamcal.com/shared/universal_nav.txt'); ?>
+<?php include('/var/www/html/code.iamcal.com/shared/universal_nav.txt'); ?>
 
 <div id="main">
 
@@ -141,7 +141,7 @@ Only showing folders over 1MB:
 
 </div>
 
-<? include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
+<?php include('/var/www/html/code.iamcal.com/shared/universal_tracker.txt'); ?>
 
 </body>
 </html>
