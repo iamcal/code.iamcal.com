@@ -63,7 +63,6 @@
 	while ($data = fread($fp, 4096)){
 		xml_parse($parser, $data, feof($fp)) or die (sprintf("XML Error: %s at line %d", xml_error_string(xml_get_error_code($parser)), xml_get_current_line_number($parser)));
 	}
-	xml_parser_free($parser);
 
 
 	#
