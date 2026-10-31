@@ -131,7 +131,7 @@
 
 		function escape_comments($data){
 
-			$data = preg_replace("/<!--(.*?)-->/se", "'<!--'.HtmlSpecialChars(\$this->StripSingle('\\1')).'-->'", $data);
+			$data = preg_replace_callback("/<!--(.*?)-->/s", function($m){ return '<!--'.HtmlSpecialChars($m[1]).'-->'; }, $data);
 
 			return $data;
 		}
@@ -179,7 +179,7 @@
 
 		function check_tags($data){
 
-			$data = preg_replace("/<(.*?)>/se", "\$this->process_tag(\$this->StripSingle('\\1'))",	$data);
+			$data = preg_replace_callback("/<(.*?)>/s", function($m){ return $this->process_tag($m[1]); }, $data);
 
 			foreach(array_keys($this->tag_counts) as $tag){
 				for($i=0; $i<$this->tag_counts[$tag]; $i++){
@@ -309,11 +309,9 @@
 				return $data;
 			}
 
-			return preg_replace(
-				"/(>|^)([^<]+?)(<|$)/se",
-					"\$this->StripSingle('\\1').".
-					"\$this->fix_case_inner(\$this->StripSingle('\\2')).".
-					"\$this->StripSingle('\\3')",
+			return preg_replace_callback(
+				"/(>|^)([^<]+?)(<|$)/s",
+				function($m){ return $m[1].$this->fix_case_inner($m[2]).$m[3]; },
 				$data
 			);
 		}
@@ -322,9 +320,9 @@
 
 			$data = StrToLower($data);
 
-			$data = preg_replace(
-				'/(^|[^\w\s\';,\\-])(\s*)([a-z])/e',
-				"\$this->StripSingle('\\1\\2').StrToUpper(\$this->StripSingle('\\3'))",
+			$data = preg_replace_callback(
+				'/(^|[^\w\s\';,\\-])(\s*)([a-z])/',
+				function($m){ return $m[1].$m[2].StrToUpper($m[3]); },
 				$data
 			);
 
@@ -337,20 +335,18 @@
 
 			# validate entities throughout the string
 
-			$data = preg_replace(
-				'!&([^&;]*)(?=(;|&|$))!e',
-				"\$this->check_entity(\$this->StripSingle('\\1'), \$this->StripSingle('\\2'))",
+			$data = preg_replace_callback(
+				'!&([^&;]*)(?=(;|&|$))!',
+				function($m){ return $this->check_entity($m[1], $m[2]); },
 				$data
 			);
 
 
 			# validate quotes outside of tags 
 
-			$data = preg_replace(
-				"/(>|^)([^<]+?)(<|$)/se",
-					"\$this->StripSingle('\\1').".
-					"str_replace('\"', '&quot;', \$this->StripSingle('\\2')).".
-					"\$this->StripSingle('\\3')",
+			$data = preg_replace_callback(
+				"/(>|^)([^<]+?)(<|$)/s",
+				function($m){ return $m[1].str_replace('"', '&quot;', $m[2]).$m[3]; },
 				$data
 			);
 
