@@ -8,7 +8,7 @@
 	$last_post_row = mysql_fetch_array(mysql_query("SELECT * FROM posts WHERE user_id='$user' ORDER BY post_time DESC LIMIT 1",$db));
 
 	# compare against the message they just posted
-	if (AddSlashes($last_post_row[message]) != $message){
+	if (AddSlashes($last_post_row['message']) != $message){
 
 		# it's different - put the message in the database
 		$time = time();
@@ -18,7 +18,7 @@
 	}else{
 
 		# it's the same message - hold onto the old message id
-		$post_num = $last_post_row[id];
+		$post_num = $last_post_row['id'];
 	}
 
 ?>

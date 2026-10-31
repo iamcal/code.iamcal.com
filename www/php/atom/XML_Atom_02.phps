@@ -49,8 +49,8 @@ class XML_Atom extends XML_Parser
 
             case 'LINK':
                 if ($this->insideTag == 'ENTRY'){
-                    if ($attribs[REL]=='alternate' || !$attribs[REL]){
-                        $this->_add('item', 'link', $attribs[HREF]);
+                    if ($attribs['REL']=='alternate' || !$attribs['REL']){
+                        $this->_add('item', 'link', $attribs['HREF']);
                     }
                 }
                 break;
